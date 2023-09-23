@@ -97,8 +97,6 @@ file_path = os.path.join(current_directory, file_name)
 # Create a new MIDI file
 midi_file = MidiFile()
 
-# ... (Your existing code to create MIDI tracks and add notes) ...
-
 # Save the MIDI file to the current directory
 midi_file.save(file_path)
 
