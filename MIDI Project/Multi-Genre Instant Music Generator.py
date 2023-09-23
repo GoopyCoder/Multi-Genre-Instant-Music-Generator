@@ -36,10 +36,10 @@ midi_chord_2 = chord_to_midi.get(chord_2)
 midi_chord_3 = chord_to_midi.get(chord_3)
 midi_chord_4 = chord_to_midi.get(chord_4)
 
-# # Create a new MIDI file
+# Create a new MIDI file
 midi_file = MidiFile()
 
-# # Create new MIDI tracks
+# Create new MIDI tracks
 track = MidiTrack()
 bass_track = MidiTrack()
 midi_file.tracks.append(track)
@@ -47,7 +47,7 @@ midi_file.tracks.append(bass_track)
 
 midi_chords = [midi_chord_1, midi_chord_2, midi_chord_3, midi_chord_4]
 
-
+#Add the Chord MIDI
 for midi_chord in midi_chords:
     for note in midi_chord:
         # print(note)
@@ -66,6 +66,7 @@ for midi_chord in midi_chords:
         track.append(Message('note_off', note=midi_chord[1], velocity=64, time=0))
         track.append(Message('note_off', note=midi_chord[2], velocity=64, time=0))
 
+#Add the Bassline MIDI
 for midi_chord in midi_chords:
     bass_track.append(Message('note_on', note=midi_chord[0], velocity=64, time=0))
     bass_track.append(Message('note_off', note=midi_chord[0], velocity=0, time=1920))
@@ -93,9 +94,6 @@ file_name = 'chord_midi_file.mid'
 
 # Specify the full file path, including the current directory, filename, and extension
 file_path = os.path.join(current_directory, file_name)
-
-# Create a new MIDI file
-midi_file = MidiFile()
 
 # Save the MIDI file to the current directory
 midi_file.save(file_path)
