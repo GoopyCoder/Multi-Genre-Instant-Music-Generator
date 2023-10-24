@@ -3,11 +3,11 @@ from mido import MidiFile, MidiTrack, Message
 import random
 
 
-track = MidiTrack()
-bass_track = MidiTrack()
-kick_track = MidiTrack()
-snare_track = MidiTrack()
-closed_hat_track = MidiTrack()
+# track = MidiTrack()
+# bass_track = MidiTrack()
+# kick_track = MidiTrack()
+# snare_track = MidiTrack()
+# closed_hat_track = MidiTrack()
 
 
 
@@ -34,20 +34,19 @@ def kick2(kick_track):
         kick_track.append(Message('note_on', note=60, velocity=127, time=480))  # Three-quarters of measure_time
         kick_track.append(Message('note_off', note=60, velocity=127, time=720))  # Quarter of measure_time
 
-#     #Kick 3
-# def kick3(kick_track):
-#     for x in range(2):
-#         kick_track.append(Message('note_on', note=60, velocity=127, time=0))
-#         kick_track.append(Message('note_off', note=60, velocity=127, time=480))
-#         kick_track.append(Message('note_on', note=60, velocity=127, time=240))  # Syncopated
-#         kick_track.append(Message('note_off', note=60, velocity=127, time=240))
-#         kick_track.append(Message('note_on', note=60, velocity=127, time=960))
-#         kick_track.append(Message('note_off', note=60, velocity=127, time=480))
-#         kick_track.append(Message('note_on', note=60, velocity=127, time=480))
-#         kick_track.append(Message('note_off', note=60, velocity=127, time=240))  # Syncopated
+def kick3(kick_track):
+    for x in range(2):
+        kick_track.append(Message('note_on', note=60, velocity=127, time=0))
+        kick_track.append(Message('note_off', note=60, velocity=127, time=480))
+        kick_track.append(Message('note_on', note=60, velocity=127, time=240))  # Syncopated
+        kick_track.append(Message('note_off', note=60, velocity=127, time=240))
+        kick_track.append(Message('note_on', note=60, velocity=127, time=960))
+        kick_track.append(Message('note_off', note=60, velocity=127, time=480))
+        kick_track.append(Message('note_on', note=60, velocity=127, time=480))
+        kick_track.append(Message('note_off', note=60, velocity=127, time=240))  # Syncopated
 
 #Rhythm
-def kick3(kick_track):
+def kick4(kick_track):
     for x in range(2):
         kick_track.append(Message('note_on', note = 60, velocity = 127, time = 0))
         kick_track.append(Message('note_on', note = 60, velocity = 127, time = 720))
@@ -57,7 +56,6 @@ def kick3(kick_track):
         kick_track.append(Message('note_on', note = 60, velocity = 127, time = 720))
         kick_track.append(Message('note_on', note = 60, velocity = 127, time = 480))
         kick_track.append(Message('note_off', note = 60, velocity = 127, time = 720))
-
 
 
 
@@ -140,12 +138,12 @@ def closed_hat1(closed_hat_track):
 
 
 
-kicks = [kick1, kick2, kick3]
+kicks = [kick1, kick2, kick3, kick4]
 snares = [snare1, snare2, snare3]
 closed_hats = [closed_hat1]
 
 random_snare = random.randint(1, 3) - 1
-random_kick = random.randint(3, 3) - 1
+random_kick = random.randint(2, 4) - 1
 random_closed_hat = random.randint(1, 1) - 1
 
 

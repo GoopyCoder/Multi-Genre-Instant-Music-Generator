@@ -11,7 +11,7 @@ from Drum_Patterns import gen_kick, gen_closed_hat, gen_snare
 
 
 # Ask the user to select a genre
-genre_input = int(input("Select a genre of hip-hop (1), r&b (2), pop (3), jazz (4), OVO (5), OZ (6): "))
+genre_input = int(input("Select a genre of hip-hop (1), r&b (2), pop (3), Lo-Fi (4), OVO (5), OZ (6): "))
 
 # Check if the entered genre is valid
 if genre_input > 0 and genre_input <= len(chord_progressions):
@@ -24,7 +24,7 @@ if genre_input > 0 and genre_input <= len(chord_progressions):
     # Print the selected chord progression
     print(f"Random {selected_genre} chord progression: {selected_chord_progression}")
 else:
-    print("Invalid genre. Please select from hip-hop (1), r&b (2), pop (3), jazz (4), OVO (5), OZ (6).")
+    print("Invalid genre. Please select from hip-hop (1), r&b (2), pop (3), Lo-Fi (4), OVO (5), OZ (6).")
 
 #Obtain Chords used from progression chosen
 chord_1 = selected_chord_progression[0]
